@@ -1,18 +1,14 @@
 alias phpfix='php-cs-fixer fix'
-alias ws='cd ~/Workspaces'
+alias ws='cd ~/Workspace'
 
 alias vsh='vagrant ssh'
 alias vup='vagrant up'
 alias vspnd='vagrant suspend'
 
-#TF
-alias tf='cd ~/Workspaces/Typeform/source/tf-dev-kit/typeform'
-alias tfdocs='cd ~/Workspaces/Typeform/docs'
-alias tfsrc='cd ~/Workspaces/Typeform/source'
-alias tfgrc='cd ~/Workspaces/Typeform/gource/src/github.com/Typeform'
+alias src='cd ~/Workspace/source'
+alias grc='cd ~/Workspace/gource'
 alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
 
-# GIT
 alias gs='git status -s'
 alias g='git'
 alias gco='git checkout'

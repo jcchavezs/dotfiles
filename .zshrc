@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jcchavezs/.oh-my-zsh
+export ZSH=/Users/josecarloschavez/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -83,13 +83,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source .alias
+source ~/.dotfiles/.alias
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
 export PATH=/usr/local/php5/bin:$PATH # Add PHP to the PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export GOPATH=$HOME/Workspace/gource
 
 source ~/Dropbox/Resources/Settings/.env
 
