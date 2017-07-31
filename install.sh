@@ -30,7 +30,16 @@ sudo mv composer.phar /usr/local/bin/composer
 
 # Install RVM
 curl -sSL https://get.rvm.io | bash
+
+# Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+brew install zsh-history-substring-search
+
+# Install VIM
+brew install vim
+brew install fzf
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Python
 brew install python
@@ -41,7 +50,6 @@ brew cask install vagrant
 brew cask install vagrant-manager
 
 mv .zshrc .zshrc_backup && ln -s .dotfiles/.zshrc .zshrc
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mv .vimrc .vimrc_backup && ln -s .dotfiles/.vimrc .vimrc
 ln -s ~/Dropbox/Resources/Settings/.env .env
 git config --global core.excludesfile '~/.dotfiles/.gitignore.global'

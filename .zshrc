@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 # User configuration
 
@@ -90,6 +90,7 @@ export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scrip
 export PATH=/usr/local/php5/bin:$PATH # Add PHP to the PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export GOPATH=$HOME/Workspace/gource
@@ -97,3 +98,6 @@ export GOPATH=$HOME/Workspace/gource
 source ~/Dropbox/Resources/Settings/.env
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
