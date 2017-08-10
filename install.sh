@@ -5,6 +5,12 @@ mkdir ~/Workspace/source
 mkdir ~/Workspace/gource
 mkdir ~/Workspace/tools
 
+# Setup GIT
+git config --global user.name "José Carlos"
+git config --global user.email jcchavezs@gmail.com
+git config --global core.excludesfile '~/.dotfiles/.gitignore.global'
+git config --global core.editor "/usr/bin/vim"
+
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
@@ -16,6 +22,7 @@ brew install go
 mkdir ~/Workspace/gource/src
 mkdir ~/Workspace/gource/pkg
 mkdir ~/Workspace/gource/bin
+brew install grc
 
 # Install PHP
 brew tap homebrew/dupes
@@ -30,6 +37,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 # Install RVM
 curl -sSL https://get.rvm.io | bash
+ln -s ~/.rvm/scripts/functions/version ~/.rvm/scripts/version
 
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -52,6 +60,5 @@ brew cask install vagrant-manager
 mv .zshrc .zshrc_backup && ln -s .dotfiles/.zshrc .zshrc
 mv .vimrc .vimrc_backup && ln -s .dotfiles/.vimrc .vimrc
 ln -s ~/Dropbox/Resources/Settings/.env .env
-git config --global core.excludesfile '~/.dotfiles/.gitignore.global'
-ln -s ~/.rvm/scripts/functions/version ~/.rvm/scripts/version
+ln -s .dotfiles/.grc .grc
 

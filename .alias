@@ -6,7 +6,7 @@ alias vup='vagrant up'
 alias vspnd='vagrant suspend'
 
 alias src='cd ~/Workspace/source'
-alias grc='cd ~/Workspace/gource'
+alias gsrc='cd ~/Workspace/gource'
 alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
 
 alias gs='git status -s'
@@ -22,4 +22,7 @@ alias gpro='git pull --rebase origin'
 alias gprom='git pull --rebase origin master'
 alias grh1s='git reset HEAD~1 --soft'
 alias grh='git reset HEAD'
+alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset %s%C(auto,red)% gD% D"'
+
+alias go='grc go'
 
