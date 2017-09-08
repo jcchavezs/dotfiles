@@ -5,17 +5,19 @@ mkdir ~/Workspace/source
 mkdir ~/Workspace/gource
 mkdir ~/Workspace/tools
 
-# Setup GIT
-git config --global user.name "José Carlos"
-git config --global user.email jcchavezs@gmail.com
-git config --global core.excludesfile '~/.dotfiles/.gitignore.global'
-git config --global core.editor "/usr/bin/vim"
-
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew upgrade
 brew cleanup
+
+# Setup GIT
+git config --global user.name "José Carlos"
+git config --global user.email jcchavezs@gmail.com
+git config --global core.excludesfile '~/.dotfiles/.gitignore.global'
+git config --global core.editor "/usr/bin/vim"
+brew install tig
+brew install pre-commit
 
 # Install GOLANG
 brew install go
