@@ -30,7 +30,8 @@ brew install grc
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
-brew install php70
+brew install php70 --with-thread-safety --with-pear
+brew install php70-pthreads
 export PATH=/usr/local/php5/bin:$PATH
 
 # Install Composer
@@ -58,6 +59,9 @@ brew install python
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-manager
+
+# Install httpie
+brew install httpie
 
 mv .zshrc .zshrc_backup && ln -s .dotfiles/.zshrc .zshrc
 mv .vimrc .vimrc_backup && ln -s .dotfiles/.vimrc .vimrc

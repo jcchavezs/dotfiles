@@ -1,3 +1,4 @@
+alias ea='vim ~/.dotfiles/.alias'
 alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
 
@@ -27,4 +28,4 @@ alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset 
 alias gcp='git cherry-pick'
 
 alias go='grc go'
-
+alias gcl='git clean -f -d'
