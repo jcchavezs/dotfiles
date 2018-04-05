@@ -87,11 +87,13 @@ source ~/.dotfiles/.alias
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
-export PATH=/usr/local/php5/bin:$PATH # Add PHP to the PATH
+#export PATH=/usr/local/php5/bin:$PATH # Add PHP to the PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="/usr/local/opt/php@7.0/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 export GOPATH=$HOME/Workspace/gource
 
@@ -100,5 +102,4 @@ source ~/Dropbox/Resources/Settings/.env
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-
 

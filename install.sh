@@ -27,12 +27,11 @@ mkdir ~/Workspace/gource/bin
 brew install grc
 
 # Install PHP
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew install php70 --with-thread-safety --with-pear
-brew install php70-pthreads
-export PATH=/usr/local/php5/bin:$PATH
+#brew tap homebrew/dupes
+#brew tap homebrew/versions
+#brew tap homebrew/homebrew-php
+brew install php70
+#export PATH=/usr/local/php5/bin:$PATH
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
