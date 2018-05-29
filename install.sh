@@ -30,10 +30,9 @@ brew install grc
 #brew tap homebrew/dupes
 #brew tap homebrew/versions
 #brew tap homebrew/homebrew-php
-brew install php70
-#export PATH=/usr/local/php5/bin:$PATH
+brew install php71
 
-# Install Composer
+#Install Composer
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
