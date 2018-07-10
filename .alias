@@ -26,6 +26,6 @@ alias grh1s='git reset HEAD~1 --soft'
 alias grh='git reset HEAD'
 alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset %s%C(auto,red)% gD% D"'
 alias gcp='git cherry-pick'
-
+alias gpr="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp"
 alias go='grc go'
 alias gcl='git clean -f -d'
