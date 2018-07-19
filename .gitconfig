@@ -1,0 +1,9 @@
+[core]
+	excludesfile = ~/.dotfiles/.gitignore.global
+	editor = /usr/bin/vim
+[user]
+	name = José Carlos Chávez
+	email = jcchavezs@gmail.com
+[alias]
+	recent = !git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))'
+
