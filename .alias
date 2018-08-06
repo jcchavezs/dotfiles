@@ -29,3 +29,5 @@ alias gcp='git cherry-pick'
 alias gpr="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp"
 alias go='grc go'
 alias gcl='git clean -f -d'
+alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop'
+
