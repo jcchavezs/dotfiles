@@ -62,8 +62,11 @@ brew cask install vagrant-manager
 # Install httpie
 brew install httpie
 
+# Install AG
+brew install the_silver_searcher
+
 mv .zshrc .zshrc_backup && ln -s .dotfiles/.zshrc .zshrc
 mv .vimrc .vimrc_backup && ln -s .dotfiles/.vimrc .vimrc
 ln -s ~/Dropbox/Resources/Settings/.env .env
 ln -s .dotfiles/.grc .grc
-
+cp ~/.dotfiles/vs-settings.json ~/Library/Application\ Support/Code/User/settings.json
