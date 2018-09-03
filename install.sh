@@ -19,6 +19,7 @@ brew cleanup
 ln -sf .dotfiles/.gitconfig ~/.gitconfig
 brew install tig
 brew install pre-commit
+brew install diff-so-fancy
 
 # Install GOLANG
 brew install go
