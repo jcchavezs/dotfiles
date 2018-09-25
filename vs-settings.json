@@ -11,5 +11,9 @@
         "**/.DS_Store": true
     },
     "terminal.integrated.fontSize": 15,
-    "php.validate.executablePath": "/usr/local/opt/php@7.1/bin/php" 
+    "php.validate.executablePath": "/usr/local/opt/php@7.1/bin/php",
+    "go.formatTool": "goimports",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1537092441317
 }
