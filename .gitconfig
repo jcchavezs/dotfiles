@@ -6,6 +6,7 @@
 	email = jcchavezs@gmail.com
 [alias]
 	recent = !git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))'
+	pr = !open `git config remote.origin.url`/compare/$(git rev-parse --abbrev-ref HEAD)
 
 [pager]
        diff = diff-so-fancy | less --tabs=1,5 -RFX
