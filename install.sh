@@ -37,6 +37,7 @@ brew install php71
 #Install Composer
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+composer global require symfony/thanks
 
 # Install RVM
 curl -sSL https://get.rvm.io | bash
