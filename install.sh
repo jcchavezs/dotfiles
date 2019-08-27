@@ -12,10 +12,6 @@ brew upgrade
 brew cleanup
 
 # Setup GIT
-#git config --global user.name "José Carlos Chávez"
-#git config --global user.email jcchavezs@gmail.com
-#git config --global core.excludesfile '${HOME_DIR}/.dotfiles/.gitignore.global'
-#git config --global core.editor "/usr/bin/vim"
 ln -sf ${HOME_DIR}/.dotfiles/.gitconfig ${HOME_DIR}/.gitconfig
 brew install pre-commit
 
