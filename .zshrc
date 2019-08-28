@@ -94,10 +94,12 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:/opt/apache-maven/bin
 
 export GOPATH=$HOME/Workspace/gource
 
-source ~/Dropbox/Resources/Settings/.env
+
+#source ~/Dropbox/Resources/Settings/.env
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
