@@ -8,12 +8,21 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
-        "**/.DS_Store": true
+        "**/.DS_Store": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
     "terminal.integrated.fontSize": 15,
     "php.validate.executablePath": "/usr/local/opt/php@7.1/bin/php",
     "go.formatTool": "goimports",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1537092441317
+    "php-cs-fixer.lastDownload": 1537092441317,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.shell.osx": "/bin/zsh"
 }
