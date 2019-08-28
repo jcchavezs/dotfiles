@@ -59,8 +59,8 @@ brew install node
 brew install yarn
 
 # Install Java
-brew cask install java
-brew cask info java
+brew cask install adoptopenjdk8
+java -version
 brew install maven
 brew info maven
 
