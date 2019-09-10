@@ -63,6 +63,7 @@ brew cask install vagrant-manager
 
 # Install httpie
 brew install httpie
+brew install jq
 
 # Install AG
 brew install the_silver_searcher
