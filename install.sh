@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir -p ${HOME}/Workspace/source/github.com/jcchavezs
 mkdir ${HOME}/Workspace/gource
 mkdir ${HOME}/Workspace/tools
@@ -87,4 +89,12 @@ brew install the_silver_searcher
 mv (${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
 mv (${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
 ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
+
+# Add VS Code settings
 cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+
+extensions='./vs-extensions.txt'
+while IFS= read -r line
+do
+  code --install-extension $line
+done < "$extensions"
