@@ -1,65 +1,83 @@
-cd ~
+#!/bin/bash
 
-mkdir ~/Workspace
-mkdir ~/Workspace/source
-mkdir ~/Workspace/gource
-mkdir ~/Workspace/tools
+mkdir -p ${HOME}/Workspace/source/github.com/jcchavezs
+mkdir ${HOME}/Workspace/gource
+mkdir ${HOME}/Workspace/tools
 
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew upgrade
 brew cleanup
+brew tap caskroom/cask
 
 # Setup GIT
-#git config --global user.name "José Carlos Chávez"
-#git config --global user.email jcchavezs@gmail.com
-#git config --global core.excludesfile '~/.dotfiles/.gitignore.global'
-#git config --global core.editor "/usr/bin/vim"
-ln -sf .dotfiles/.gitconfig ~/.gitconfig
-brew install tig
+ln -sf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
 brew install pre-commit
-brew install diff-so-fancy
+
+# Install ZSH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+
+# Install VIM
+brew install vim
+brew install fzf
+git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+
+# Install httpie
+brew install httpie
+
+# Install htop
+brew install htop
+
+# Install AG
+brew install the_silver_searcher
+
+mv (${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
+mv (${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
+ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
+cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 
 # Install GOLANG
 brew install go
-mkdir ~/Workspace/gource/src
-mkdir ~/Workspace/gource/pkg
-mkdir ~/Workspace/gource/bin
+mkdir -p ${HOME}/Workspace/gource/src/github.com/jcchavezs
+mkdir ${HOME}/Workspace/gource/pkg
+mkdir ${HOME}/Workspace/gource/bin
 brew install grc
+go get golang.org/x/tools/cmd/goimports
 
 # Install PHP
-#brew tap homebrew/dupes
-#brew tap homebrew/versions
-#brew tap homebrew/homebrew-php
 brew install php71
 
-#Install Composer
+# Install Composer
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 composer global require symfony/thanks
 
 # Install RVM
 curl -sSL https://get.rvm.io | bash
-ln -s ~/.rvm/scripts/functions/version ~/.rvm/scripts/version
+ln -s ${HOME}/.rvm/scripts/functions/version ${HOME}/.rvm/scripts/version
+
+# Install node
+brew install node
+brew install yarn
+
+# Install Java
+brew cask install adoptopenjdk8
+java -version
+brew install maven
+brew info maven
 
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
 # Install VIM
 brew install vim
 brew install fzf
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# Install Python
-brew install python
-
-# Install Vagrant
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install vagrant-manager
+git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
 # Install httpie
 brew install httpie
@@ -68,8 +86,15 @@ brew install jq
 # Install AG
 brew install the_silver_searcher
 
-mv .zshrc .zshrc_backup && ln -s .dotfiles/.zshrc .zshrc
-mv .vimrc .vimrc_backup && ln -s .dotfiles/.vimrc .vimrc
-ln -s ~/Dropbox/Resources/Settings/.env .env
-ln -s .dotfiles/.grc .grc
-cp ~/.dotfiles/vs-settings.json ~/Library/Application\ Support/Code/User/settings.json
+mv (${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
+mv (${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
+ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
+
+# Add VS Code settings
+cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+
+extensions='./vs-extensions.txt'
+while IFS= read -r line
+do
+  code --install-extension $line
+done < "$extensions"
