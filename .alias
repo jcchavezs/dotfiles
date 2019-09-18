@@ -1,7 +1,7 @@
 alias ea='vim ~/.dotfiles/.alias'
 alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
-alias dotfiles='cd ~/.dotfiles && code .'
+alias dotfiles='code ~/.dotfiles'
 
 alias vsh='vagrant ssh'
 alias vup='vagrant up'

@@ -26,6 +26,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle
 # Install httpie
 brew install httpie
 
+# Install htop
+brew install htop
+
 # Install AG
 brew install the_silver_searcher
 

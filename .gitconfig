@@ -9,7 +9,3 @@
 	pr = !open `git config remote.origin.url`/compare/$(git rev-parse --abbrev-ref HEAD)
 	# see http://weiqingtoh.github.io/force-with-lease/
 	pushf = push --force-with-lease
-
-[pager]
-       diff = diff-so-fancy | less --tabs=1,5 -RFX
-       show = diff-so-fancy | less --tabs=1,5 -RFX

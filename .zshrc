@@ -83,25 +83,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.dotfiles/.alias
+source $HOME/.dotfiles/.alias
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
-#export PATH=/usr/local/php5/bin:$PATH # Add PHP to the PATH
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export GOPATH=$HOME/Workspace/gource
 export PATH=$PATH:/opt/apache-maven/bin
 
-export GOPATH=$HOME/Workspace/gource
-
-
-#source ~/Dropbox/Resources/Settings/.env
+source $HOME/.env
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 
