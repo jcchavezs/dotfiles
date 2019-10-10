@@ -2,6 +2,7 @@ calebporzio.better-phpunit
 higoka.php-cs-fixer
 mauve.terraform
 ms-azuretools.vscode-docker
+ms-vscode.cpptools
 ms-vscode.Go
 redhat.java
 redhat.vscode-xml

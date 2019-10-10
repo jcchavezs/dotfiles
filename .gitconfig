@@ -9,3 +9,5 @@
 	pr = !open `git config remote.origin.url`/compare/$(git rev-parse --abbrev-ref HEAD)
 	# see http://weiqingtoh.github.io/force-with-lease/
 	pushf = push --force-with-lease
+[diff]
+	noprefix = true
