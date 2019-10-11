@@ -69,6 +69,9 @@ java -version
 brew install maven
 brew info maven
 
+# Install clang-format
+brew install clang-format
+
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
