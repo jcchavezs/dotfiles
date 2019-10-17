@@ -1,11 +1,14 @@
 calebporzio.better-phpunit
+fwcd.kotlin
 higoka.php-cs-fixer
 mauve.terraform
 ms-azuretools.vscode-docker
+ms-python.python
 ms-vscode.cpptools
 ms-vscode.Go
 redhat.java
 redhat.vscode-xml
+scala-lang.scala
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency

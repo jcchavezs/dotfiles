@@ -32,3 +32,8 @@ alias go='grc go'
 alias gcl='git clean -f -d'
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop'
 
+# Expedia
+alias gexp='grep -q "email" .git/config || echo "[user]
+        name = José Carlos Chávez
+        email = joschavez@expedia.com
+" >> .git/config && cat .git/config'
