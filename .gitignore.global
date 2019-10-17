@@ -32,4 +32,4 @@ CMake*
 
 #VSCode
 *.code-workspace
-
+.vscode/*
