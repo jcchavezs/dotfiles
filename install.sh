@@ -25,6 +25,9 @@ brew install vim
 brew install fzf
 git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
+# Install mysql-client
+brew install mysql-client
+
 # Install httpie
 brew install httpie
 
@@ -69,6 +72,9 @@ java -version
 brew install maven
 brew info maven
 
+# Install kotlin
+brew install kotlin
+
 # Install clang-format
 brew install clang-format
 
@@ -85,6 +91,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle
 # Install httpie
 brew install httpie
 brew install jq
+
+# Install watch
+brew install watch
 
 # Install AG
 brew install the_silver_searcher

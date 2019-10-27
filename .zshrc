@@ -89,12 +89,21 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
 export GOPATH=$HOME/Workspace/gource
-export PATH=$PATH:/opt/apache-maven/bin
+export PATH="$PATH:$GOPATH/bin"
+
+export JAVA_HOME="$(/usr/libexec/java_home)" 
+export PATH=$PATH:$JAVA_HOME/bin
+export M2_HOME="$(mvn -v | sed -n 2p | cut -c$(echo 'Maven home: ' | wc -c)-)"
+export MAVEN_HOME=$M2_HOME
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+export PATH=$PATH:$M2_HOME/bin
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 source $HOME/.env
 

@@ -31,6 +31,7 @@ alias gpr="git branch --merged | grep -v master | grep -v '*' > .merged-branches
 alias go='grc go'
 alias gcl='git clean -f -d'
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop'
+alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"'
 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]

@@ -25,5 +25,8 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
     "terminal.integrated.shell.osx": "/bin/zsh",
-    "[go]": {"editor.formatOnSave": true}
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true
 }
