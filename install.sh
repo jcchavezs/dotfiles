@@ -102,6 +102,11 @@ mv (${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zs
 mv (${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
 ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
 
+# Install latex
+brew cask install basictex
+sudo tlmgr update --self
+sudo tlmgr install latexmk enumitem stmaryrd collection-fontsrecommended
+
 # Add VS Code settings
 cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 

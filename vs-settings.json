@@ -28,5 +28,6 @@
     "[go]": {
         "editor.formatOnSave": true
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "latex-workshop.view.pdf.viewer": "tab"
 }
