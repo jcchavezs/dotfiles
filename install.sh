@@ -38,11 +38,14 @@ brew install htop
 brew install the_silver_searcher
 
 mv (${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
+mkdir -p ${ZSH_CUSTOM}/custom
+ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
+
 mv (${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
 ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
 cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 
-# Install GOLANG
+# Install Go
 brew install go
 mkdir -p ${HOME}/Workspace/gource/src/github.com/jcchavezs
 mkdir ${HOME}/Workspace/gource/pkg

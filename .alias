@@ -3,10 +3,6 @@ alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
 alias dotfiles='code ~/.dotfiles'
 
-alias vsh='vagrant ssh'
-alias vup='vagrant up'
-alias vspnd='vagrant suspend'
-
 alias src='cd ~/Workspace/source'
 alias gsrc='cd ~/Workspace/gource'
 alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
@@ -23,15 +19,16 @@ alias gpom='git pull origin master'
 alias gpom='git pull origin master'
 alias gpro='git pull --rebase origin'
 alias gprom='git pull --rebase origin master'
-alias grh1s='git reset HEAD~1 --soft'
+alias grh1s='git reset HEAD~1 --soft' # undoes last commit
 alias grh='git reset HEAD'
 alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset %s%C(auto,red)% gD% D"'
 alias gcp='git cherry-pick'
-alias gpr="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp"
+alias gbc="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp"
+alias gpr="open_pr" # opens a PR against master
 alias go='grc go'
-alias gcl='git clean -f -d'
-alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop'
-alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"'
+alias gcl='git clean -f -d' # resets all the changes including new files
+alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
+alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
