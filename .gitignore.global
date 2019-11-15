@@ -24,7 +24,7 @@ node_modules
 .sass-cache
 
 # IDEa
-.idea
+.idea/*
 CMake*
 
 # Linux trash folder which might appear on any partition or disk
