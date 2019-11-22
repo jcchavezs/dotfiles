@@ -28,6 +28,7 @@ alias gpr="open_pr" # opens a PR against master
 alias go='grc go'
 alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
+alias gwip='gco -b wip_$(date +"%Y-%m-%d") && ga . && git commit -m "wip" --no-verify && gco master'
 alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
 
 # Expedia
