@@ -28,6 +28,9 @@
     "[go]": {
         "editor.formatOnSave": true
     },
-    "editor.formatOnSave": true,
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "go.useLanguageServer": true,
+    "java.configuration.maven.userSettings": "${MAVEN_HOME}/conf/settings.xml",
+    "java.maven.downloadSources": true,
+    "maven.pomfile.autoUpdateEffectivePOM": true
 }

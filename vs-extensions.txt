@@ -1,7 +1,8 @@
 calebporzio.better-phpunit
-esafirm.kotlin-formatter
+DotJoshJohnson.xml
 formulahendry.code-runner
 fwcd.kotlin
+hbenl.vscode-test-explorer
 higoka.php-cs-fixer
 James-Yu.latex-workshop
 mauve.terraform
@@ -9,9 +10,12 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.cpptools
 ms-vscode.Go
+premparihar.gotestexplorer
 redhat.java
 redhat.vscode-xml
 scala-lang.scala
+shengchen.vscode-checkstyle
+streetsidesoftware.avro
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
