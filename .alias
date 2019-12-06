@@ -30,6 +30,7 @@ alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
 alias gwip='gco -b wip_$(date +"%Y-%m-%d") && git add . && git commit -m "wip" --no-verify && gco master' # creates WIP branch with existing files
 alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
+alias gmf="git_modified_files"
 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]

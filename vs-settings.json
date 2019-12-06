@@ -32,5 +32,6 @@
     "go.useLanguageServer": true,
     "java.configuration.maven.userSettings": "${MAVEN_HOME}/conf/settings.xml",
     "java.maven.downloadSources": true,
-    "maven.pomfile.autoUpdateEffectivePOM": true
+    "maven.pomfile.autoUpdateEffectivePOM": true,
+    "C_Cpp.updateChannel": "Insiders"
 }
