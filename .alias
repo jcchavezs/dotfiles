@@ -1,12 +1,13 @@
-alias ea='vim ~/.dotfiles/.alias'
+alias go='grc go'
 alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
 alias dotfiles='code ~/.dotfiles'
-
+alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
 alias src='cd ~/Workspace/source'
 alias gsrc='cd ~/Workspace/gource'
 alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
 
+# GIT
 alias gs='git status -s'
 alias g='git'
 alias gco='git checkout'
@@ -25,12 +26,13 @@ alias gcp='git cherry-pick'
 alias gbc="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp*" # cleans merged branches
 alias gpr="git_open_pr" # opens a PR against master
 alias galc="git_ammend_last_commit" # ammends the last commit adding the stagged files
-alias go='grc go'
 alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
 alias gwip='git_wip' # creates WIP branch with existing files
-alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
 alias gmf="git_modified_files"
+
+# Docker
+alias dsa="docker ps -aq | xargs docker stop"
 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
