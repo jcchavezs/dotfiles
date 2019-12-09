@@ -24,6 +24,7 @@ function git_ammend_last_commit() {
   git commit -m "$message"
 }
 
+# List all added/modified files that are not deleted.
 function git_modified_files() {
   if [[ $1 == "" ]]; then
     # list files | filter in those that are added or modified but not deleted
@@ -32,4 +33,15 @@ function git_modified_files() {
     # list files | filter in those that are added or modified but not deleted | filter by extension | remove the bullets
     git status -s | awk '{if ((($1 ~ "M" || $1 ~ "A") && $1 !~ "D") || $1 == "??") print $2}' | grep -n "$1" | awk -F: '{print $2}'
   fi  
+}
+
+# Creates a wip branch (if not in one already) and a wip commit with all modified/added files.
+function git_wip() {
+  branch_name=`git symbolic-ref HEAD | cut -d"/" -f 3,4`;
+  if [[ ! $branch_name == wip* ]]; then
+    gco -b wip_$(date +"%Y-%m-%d")
+  fi
+  git add .
+  git commit -m "wip" --no-verify
+  gco master
 }
