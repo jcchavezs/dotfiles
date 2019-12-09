@@ -34,4 +34,8 @@ CMake*
 *.code-workspace
 .vscode/*
 
+# Java
+.project
+.classpath
 .factorypath
+.settings/*
