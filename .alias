@@ -8,7 +8,7 @@ alias gsrc='cd ~/Workspace/gource'
 alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
 
 # GIT
-alias gs='git status -s'
+alias gs='git status -s -u'
 alias g='git'
 alias gco='git checkout'
 alias gcom='git checkout master'

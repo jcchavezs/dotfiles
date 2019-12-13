@@ -28,10 +28,10 @@ function git_ammend_last_commit() {
 function git_modified_files() {
   if [[ $1 == "" ]]; then
     # list files | filter in those that are added or modified but not deleted
-    git status -s | awk '{if ((($1 ~ "M" || $1 ~ "A") && $1 !~ "D") || $1 == "??") print $2}'
+    git status -s -u | awk '{if ((($1 ~ "M" || $1 ~ "A") && $1 !~ "D") || $1 == "??") print $2}'
   else
     # list files | filter in those that are added or modified but not deleted | filter by extension | remove the bullets
-    git status -s | awk '{if ((($1 ~ "M" || $1 ~ "A") && $1 !~ "D") || $1 == "??") print $2}' | grep -n "$1" | awk -F: '{print $2}'
+    git status -s -u | awk '{if ((($1 ~ "M" || $1 ~ "A") && $1 !~ "D") || $1 == "??") print $2}' | grep -n "$1" | awk -F: '{print $2}'
   fi  
 }
 
