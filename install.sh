@@ -74,9 +74,14 @@ brew cask install adoptopenjdk8
 java -version
 brew install maven
 brew info maven
+brew install pmd
 
 # Install kotlin
 brew install kotlin
+
+# Install scala
+brew install scala
+brew install sbt
 
 # Install clang-format
 brew install clang-format

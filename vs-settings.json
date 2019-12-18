@@ -33,5 +33,9 @@
     "java.configuration.maven.userSettings": "${MAVEN_HOME}/conf/settings.xml",
     "java.maven.downloadSources": true,
     "maven.pomfile.autoUpdateEffectivePOM": true,
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "javascript.format.enable": false
 }

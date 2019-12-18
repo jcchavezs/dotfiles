@@ -1,9 +1,9 @@
 calebporzio.better-phpunit
 donjayamanne.githistory
 DotJoshJohnson.xml
-formulahendry.code-runner
 fwcd.kotlin
 higoka.php-cs-fixer
+itryapitsin.Sbt
 James-Yu.latex-workshop
 mauve.terraform
 ms-azuretools.vscode-docker
