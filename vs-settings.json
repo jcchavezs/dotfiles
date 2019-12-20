@@ -37,5 +37,6 @@
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "javascript.format.enable": false
+    "javascript.format.enable": false,
+    "editor.formatOnSave": true
 }
