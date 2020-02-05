@@ -19,7 +19,7 @@
     "go.formatTool": "goimports",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1537092441317,
+    "php-cs-fixer.lastDownload": 1580057483409,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.external.osxExec": "iTerm.app",
@@ -39,5 +39,8 @@
     },
     "javascript.format.enable": false,
     "php-cs-fixer.executable": "~/.composer/vendor/bin/php-cs-fixer",
-    "php-cs-fixer.pathMode": "override"
+    "php-cs-fixer.pathMode": "override",
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    }
 }

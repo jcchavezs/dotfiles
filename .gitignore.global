@@ -39,3 +39,6 @@ CMake*
 .classpath
 .factorypath
 .settings/*
+
+# PHP
+.php_cs.cache

@@ -34,6 +34,11 @@ alias gmf="git_modified_files"
 # Docker
 alias dsa="docker ps -aq | xargs docker stop"
 
+# k8s
+alias k='kubectl'
+alias kgpo='kubectl get pod'
+alias kpf='kubectl port-forward'
+
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
         name = José Carlos Chávez

@@ -104,6 +104,10 @@ brew install jq
 # Install watch
 brew install watch
 
+# Install retry
+brew pull 27283
+brew install retry
+
 # Install AG
 brew install the_silver_searcher
 
