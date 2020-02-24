@@ -42,5 +42,5 @@ alias kpf='kubectl port-forward'
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
         name = José Carlos Chávez
-        email = joschavez@expedia.com
+        email = joschavez@expediagroup.com
 " >> .git/config && cat .git/config'
