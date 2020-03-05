@@ -24,7 +24,6 @@ alias grh='git reset HEAD'
 alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset %s%C(auto,red)% gD% D"'
 alias gcp='git cherry-pick'
 alias gbc="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp*" # cleans merged branches
-alias gpr="git_open_pr" # opens a PR against master
 alias galc="git_ammend_last_commit" # ammends the last commit adding the stagged files
 alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
