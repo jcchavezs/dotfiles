@@ -1,3 +1,12 @@
+function github_open() {
+  if [[ ! -d .git ]]; then
+    echo "$(pwd) is not a git folder."
+    return 1
+  fi
+  REPOSITORY_URL=$(git remote -v | awk '/origin.+fetch/{print $2}' | cut -f2 -d@ | sed -e s/:/\\//)
+  open https://${REPOSITORY_URL}
+}
+
 # Undoes the last commit, includes the staged files and redoes the commit.
 function git_ammend_last_commit() {
   message=`git log -1 --pretty=%B`

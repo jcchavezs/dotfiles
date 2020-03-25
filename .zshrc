@@ -88,7 +88,7 @@ source $HOME/.dotfiles/.alias
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"

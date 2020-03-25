@@ -54,7 +54,7 @@ brew install grc
 go get golang.org/x/tools/cmd/goimports
 
 # Install PHP
-brew install php71
+brew install php@7.3
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php

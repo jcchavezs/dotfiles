@@ -5,7 +5,6 @@ alias dotfiles='code ~/.dotfiles'
 alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
 alias src='cd ~/Workspace/source'
 alias gsrc='cd ~/Workspace/gource'
-alias autoenv='export $(cat ./.env.local | xargs) && echo "Autloading .env"'
 
 # GIT
 alias gs='git status -s -u'
@@ -29,17 +28,18 @@ alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
 alias gwip='git_wip' # creates WIP branch with existing files
 alias gmf="git_modified_files"
+alias gho="github_open"
+alias dcf="docker-compose stop && docker-compose rm -f -v"
 
 # Docker
 alias dsa="docker ps -aq | xargs docker stop"
 
 # k8s
-alias k='kubectl'
-alias kgpo='kubectl get pod'
-alias kpf='kubectl port-forward'
+alias kctl='kubectl'
 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
         name = José Carlos Chávez
         email = joschavez@expediagroup.com
 " >> .git/config && cat .git/config'
+alias akg='aws_key_gen'

@@ -15,13 +15,9 @@
         "**/.factorypath": true
     },
     "terminal.integrated.fontSize": 15,
-    "php.validate.executablePath": "/usr/local/opt/php@7.1/bin/php",
+    "php.validate.executablePath": "php",
     "go.formatTool": "goimports",
-    "php-cs-fixer.onsave": true,
-    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1580057483409,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
     "terminal.integrated.shell.osx": "/bin/zsh",
@@ -30,9 +26,6 @@
     },
     "latex-workshop.view.pdf.viewer": "tab",
     "go.useLanguageServer": true,
-    "java.configuration.maven.userSettings": "${MAVEN_HOME}/conf/settings.xml",
-    "java.maven.downloadSources": true,
-    "maven.pomfile.autoUpdateEffectivePOM": true,
     "C_Cpp.updateChannel": "Insiders",
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -42,5 +35,6 @@
     "php-cs-fixer.pathMode": "override",
     "vs-kubernetes": {
         "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    }
+    },
+    "editor.formatOnSave": true
 }
