@@ -26,17 +26,32 @@ alias gbc="git branch --merged | grep -v master | grep -v '*' > .merged-branches
 alias galc="git_ammend_last_commit" # ammends the last commit adding the stagged files
 alias gcl='git clean -f -d' # resets all the changes including new files
 alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
-alias gwip='git_wip' # creates WIP branch with existing files
+alias gbwip='git_branch_wip' # creates WIP branch with existing files
+alias gcwip='git add . && git commit -m "wip"' # does a WIP commit in the branch
 alias gmf="git_modified_files"
 alias gho="github_open"
-alias dcf="docker-compose stop && docker-compose rm -f -v"
+alias gpfo="git push -f origin"
 
 # Docker
 alias dsa="docker ps -aq | xargs docker stop"
+alias dcf="docker-compose stop && docker-compose rm -f -v"
+alias drm="docker rm -f"
 
 # k8s
-alias kctl='kubectl'
-
+alias k='kubectl'
+alias kgp='kube_get_pods'
+alias kgai='kube_get_app_images'
+alias kgpi='kube_get_pod_image'
+alias kc='kubectl config get-contexts'
+alias kuc='kubectl config use-context'
+alias kdp='kube_describe_pod'
+alias kuns='kube_use_namespace'
+alias kcns='kube_get_current_namespace'
+alias krns='kube_reset_namespace'
+alias kl='kube_logs'
+alias klp='kube_list_pods'
+alias kexec='kube_exec'
+ 
 # Expedia
 alias gexp='grep -q "email" .git/config || echo "[user]
         name = José Carlos Chávez
