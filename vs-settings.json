@@ -36,5 +36,9 @@
     "vs-kubernetes": {
         "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
-    "editor.formatOnSave": true
+    "xml.format.splitAttributes": true,
+    "editor.formatOnSave": true,
+    "namespaceResolver.sortOnSave": true,
+    "namespaceResolver.sortNatural": true,
+    "namespaceResolver.showMessageOnStatusBar": true
 }
