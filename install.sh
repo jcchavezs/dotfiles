@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir -p ${HOME}/Workspace/source/github.com/jcchavezs
-mkdir ${HOME}/Workspace/gource
-mkdir ${HOME}/Workspace/tools
+mkdir -p ${HOME}/Workspace/source/github.com/jcchavezs || true
+mkdir ${HOME}/Workspace/gource || true
+mkdir ${HOME}/Workspace/tools || true
 
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
