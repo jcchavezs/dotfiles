@@ -5,7 +5,7 @@ mkdir ${HOME}/Workspace/gource
 mkdir ${HOME}/Workspace/tools
 
 # Install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 brew upgrade
 brew cleanup
