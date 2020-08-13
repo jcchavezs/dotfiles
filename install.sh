@@ -9,7 +9,7 @@ mkdir ${HOME}/Workspace/tools || true
 brew update
 brew upgrade
 brew cleanup
-brew tap caskroom/cask
+brew tap homebrew/cask-cask
 
 # Setup GIT
 ln -sf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
