@@ -2,6 +2,8 @@ bmewburn.vscode-intelephense-client
 calebporzio.better-phpunit
 DavidAnson.vscode-markdownlint
 donjayamanne.githistory
+felixfbecker.php-debug
+felixfbecker.php-intellisense
 felixfbecker.php-pack
 fwcd.kotlin
 golang.go
@@ -10,6 +12,7 @@ higoka.php-cs-fixer
 itryapitsin.Sbt
 James-Yu.latex-workshop
 Kasik96.latte
+kumar-harsh.graphql-for-vscode
 marp-team.marp-vscode
 MehediDracula.php-namespace-resolver
 ms-azuretools.vscode-docker
@@ -23,3 +26,4 @@ shengchen.vscode-checkstyle
 streetsidesoftware.avro
 TheNouillet.symfony-vscode
 xaver.clang-format
+zxh404.vscode-proto3

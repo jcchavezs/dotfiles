@@ -52,9 +52,3 @@ alias kl='kube_logs'
 alias klp='kube_list_pods'
 alias kexec='kube_exec'
  
-# Expedia
-alias gexp='grep -q "email" .git/config || echo "[user]
-        name = José Carlos Chávez
-        email = joschavez@expediagroup.com
-" >> .git/config && cat .git/config'
-alias akg='aws_key_gen'
