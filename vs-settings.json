@@ -40,5 +40,6 @@
     "editor.formatOnSave": true,
     "namespaceResolver.sortOnSave": true,
     "namespaceResolver.sortNatural": true,
-    "namespaceResolver.showMessageOnStatusBar": true
+    "namespaceResolver.showMessageOnStatusBar": true,
+    "symfony-vscode.enableFileWatching": false
 }

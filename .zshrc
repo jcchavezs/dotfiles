@@ -105,7 +105,7 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"
 export PATH=$PATH:$M2_HOME/bin
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-source $HOME/.env
+source $HOME/.env # used for secrets
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
