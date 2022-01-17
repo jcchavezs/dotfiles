@@ -9,13 +9,14 @@
 
 ## Install
 
-```
+```bash
 cd ~
 git clone https://github.com/jcchavezs/dotfiles .dotfiles
 ./.dotfiles/install.sh
 ```
 
 ## Backup
-```
+
+```bash
 ~/.dotfiles/backup.sh
 ```

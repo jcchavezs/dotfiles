@@ -75,7 +75,7 @@ function kube_reset_namespace() {
   kubectl config set-context --current --namespace=kube-system
 }
 
-function kube_list_pods() {
+function kube_list_pods() { # alias klp
   NAMESPACE_ARGS=""
   if [[ ! "$1" == "" ]]; then
     NAMESPACE_ARGS="-n $1"
@@ -85,8 +85,18 @@ function kube_list_pods() {
   sh -c "$CMD"
 }
 
+function kube_list_pods_watch() { # alias klpw
+  NAMESPACE_ARGS=""
+  if [[ ! "$1" == "" ]]; then
+    NAMESPACE_ARGS="-n $1"
+  fi
+
+  CMD="watch -n 2 -- kubectl get pods $NAMESPACE_ARGS"
+  sh -c "$CMD"
+}
+
 # list the running pods for a given app (optionally in a namespace)
-function kube_get_pods() {
+function kube_list_pods_app() { # klpa
   NAMESPACE_ARGS=""
   if [[ "$#" == "2" ]]; then
     NAMESPACE_ARGS="-n $2"
@@ -114,9 +124,9 @@ function kube_get_app_images() {
   sh -c "kubectl get pod -o json --selector=app=$1 $NAMESPACE_ARGS"  | jq '.items' | jq -c '.[].spec.containers' | jq -r -c '.[].image' | grep $1
 }
 
-function kube_get_pod_image() {
-  if [[ "$1" == "" ]]; then
-    echo "First agument (pod name) is required."
+function kube_get_pod_image() { # alias kgpi
+  if [[ "$#" == "0" ]]; then
+    echo "Usage: kdp <pod name> [<namespace>]"
     return 1
   fi
 
@@ -128,7 +138,12 @@ function kube_get_pod_image() {
   sh -c "kubectl get pod -o json $1 $NAMESPACE_ARGS"  | jq -c '.spec.containers' | jq -r -c '.[].image'
 }
 
-function kube_describe_pod() {
+function kube_describe_pod() { # alias kdp
+  if [[ "$#" == "0" ]]; then
+    echo "Usage: kdp <pod name> [<namespace>]"
+    return 1
+  fi
+
   NAMESPACE_ARGS=""
   if [[ "$#" == "2" ]]; then
     NAMESPACE_ARGS="-n $2"
@@ -137,7 +152,7 @@ function kube_describe_pod() {
   sh -c "kubectl describe pod $1 $NAMESPACE_ARGS"
 }
 
-function kube_logs() {
+function kube_logs() { # alias kl
   CMD="kubectl logs"
   if [[ "$1" == "-f" ]]; then
     CMD="$CMD -f"
@@ -168,4 +183,19 @@ function kube_exec() {
      CMD="$2"
   fi
   kubectl exec -it $1 -- $CMD
+}
+
+function kube_delete_namespace_force() { # alias krnsf
+  rm ./$1.json 2> /dev/null
+  echo "Forcing deletion for namespace $1"
+  kubectl get namespace $1 -o json | jq '.spec.finalizers = []' | jq '.' > ./$1.json
+  kubectl replace --raw "/api/v1/namespaces/$1/finalize" -f ./$1.json || { rm ./$1.json ; return 1 ; }
+}
+
+function docker_clean_duplicated_names() { # alias dcdn
+  DOCKERFILE="$1"
+  if [ -z $DOCKERFILE ]; then
+    DOCKERFILE="docker-compose.yml"
+  fi
+  cat $DOCKERFILE | yq -r '.services | keys[]' | xargs -I {} docker rm -f {} || true
 }

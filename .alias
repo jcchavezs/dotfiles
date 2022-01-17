@@ -31,24 +31,34 @@ alias gcwip='git add . && git commit -m "wip"' # does a WIP commit in the branch
 alias gmf="git_modified_files"
 alias gho="github_open"
 alias gpfo="git push -f origin"
+alias gcopr="gh pr checkout"
 
 # Docker
 alias dsa="docker ps -aq | xargs docker stop"
 alias dcf="docker-compose stop && docker-compose rm -f -v"
 alias drm="docker rm -f"
+alias dcdn="docker_clean_duplicated_names"
 
 # k8s
 alias k='kubectl'
-alias kgp='kube_get_pods'
+alias klpa='kube_list_pods_app'
 alias kgai='kube_get_app_images'
 alias kgpi='kube_get_pod_image'
+
 alias kc='kubectl config get-contexts'
 alias kuc='kubectl config use-context'
 alias kdp='kube_describe_pod'
+
 alias kuns='kube_use_namespace'
 alias kcns='kube_get_current_namespace'
 alias krns='kube_reset_namespace'
-alias kl='kube_logs'
+alias klns='kubectl get namespaces'
+alias kdns='kubectl delete namespace'
+alias kdnsf='kube_delete_namespace_force'
+
+#alias kl='kube_logs' rethink!
+
 alias klp='kube_list_pods'
+alias klpw='kube_list_pods_watch'
+
 alias kexec='kube_exec'
- 

@@ -15,6 +15,7 @@ brew cleanup
 # Setup GIT
 ln -sf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
 brew install pre-commit
+brew install gh
 
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -42,7 +43,6 @@ brew install htop
 brew install the_silver_searcher
 
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
-mkdir -p ${ZSH_CUSTOM}/custom
 ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
 
 (mv ${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
