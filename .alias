@@ -41,24 +41,15 @@ alias dcdn="docker_clean_duplicated_names"
 
 # k8s
 alias k='kubectl'
-alias klpa='kube_list_pods_app'
-alias kgai='kube_get_app_images'
-alias kgpi='kube_get_pod_image'
+alias i='getmesh istioctl'
 
-alias kc='kubectl config get-contexts'
-alias kuc='kubectl config use-context'
-alias kdp='kube_describe_pod'
-
-alias kuns='kube_use_namespace'
-alias kcns='kube_get_current_namespace'
-alias krns='kube_reset_namespace'
-alias klns='kubectl get namespaces'
-alias kdns='kubectl delete namespace'
 alias kdnsf='kube_delete_namespace_force'
 
-#alias kl='kube_logs' rethink!
-
-alias klp='kube_list_pods'
-alias klpw='kube_list_pods_watch'
 
 alias kexec='kube_exec'
+
+# Tetrate
+alias gstetrate='grep -q "email" .git/config || echo "[user]
+        name = José Carlos Chávez
+        email = jc@tetrate.io
+" >> .git/config && cat .git/config'

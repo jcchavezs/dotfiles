@@ -92,6 +92,7 @@ export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 export GOPATH=$HOME/Workspace/gource
 export PATH="$PATH:$GOPATH/bin"
@@ -104,6 +105,7 @@ export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 export PATH=$PATH:$M2_HOME/bin
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 [[ -f $HOME/.env ]] && source $HOME/.env # used for secrets
 
@@ -112,3 +114,5 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 
 source <(kubectl completion zsh)  # setup autocomplete in zsh into the current shell
+export GETMESH_HOME="$HOME/.getmesh"
+export PATH="$GETMESH_HOME/bin:$PATH"

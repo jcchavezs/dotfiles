@@ -3,9 +3,7 @@ calebporzio.better-phpunit
 Cameron.vscode-pytest
 DavidAnson.vscode-markdownlint
 donjayamanne.githistory
-felixfbecker.php-debug
 felixfbecker.php-intellisense
-felixfbecker.php-pack
 fwcd.kotlin
 GitHub.copilot
 golang.go
@@ -43,5 +41,8 @@ vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
 xaver.clang-format
+xdebug.php-debug
+xdebug.php-pack
 ziyasal.vscode-open-in-github
+zobo.php-intellisense
 zxh404.vscode-proto3

@@ -42,6 +42,8 @@ brew install htop
 # Install AG
 brew install the_silver_searcher
 
+brew install kustomize
+
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
 ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
 
@@ -63,7 +65,7 @@ go get github.com/golang/protobuf/protoc-gen-go
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 # Install PHP
-brew install php@7.3
+brew install php@8.0
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
@@ -80,7 +82,6 @@ brew install node
 brew install yarn
 
 # Install Java
-brew cask install adoptopenjdk8
 java -version
 brew install maven
 brew info maven
@@ -115,6 +116,7 @@ brew install jq
 
 # Install watch
 brew install watch
+brew install gnu-sed
 
 # Install retry
 brew pull 27283
@@ -140,3 +142,5 @@ while IFS= read -r line
 do
   code --install-extension $line
 done < "$extensions"
+
+cp ./karabiner.json ${HOME}/.config/karabiner/karabiner.json
