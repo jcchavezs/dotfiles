@@ -1,4 +1,3 @@
-alias go='grc go'
 alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
 alias dotfiles='code ~/.dotfiles'
@@ -42,6 +41,8 @@ alias dcdn="docker_clean_duplicated_names"
 # k8s
 alias k='kubectl'
 alias i='getmesh istioctl'
+alias kgc='kubectl config get-contexts'
+alias kuc='kubectl config use-context'
 
 alias kdnsf='kube_delete_namespace_force'
 

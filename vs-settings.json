@@ -57,5 +57,9 @@
     },
     "redhat.telemetry.enabled": true,
     "editor.inlineSuggest.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "go.executable.path": "/usr/local/go/bin/go",
+    "yaml.schemas": {
+        "https://github.com/jcchavezs/envoy-config-schema/releases/download/v1.21.0/v3_Bootstrap.json": "envoy-config.yaml"
+    }
 }

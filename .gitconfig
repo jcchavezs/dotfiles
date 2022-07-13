@@ -10,7 +10,7 @@
 	# see http://weiqingtoh.github.io/force-with-lease/
 	pushf = push --force-with-lease
 [diff]
-	noprefix = true
+	noprefix = false
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

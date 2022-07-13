@@ -48,14 +48,12 @@ brew install kustomize
 ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
 
 (mv ${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
 cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 
 # Install Go
 brew install go
 mkdir ${HOME}/Workspace/gource/pkg
 mkdir ${HOME}/Workspace/gource/bin
-brew install grc
 go get golang.org/x/tools/cmd/goimports
 
 # Install protobuf
@@ -118,6 +116,9 @@ brew install jq
 brew install watch
 brew install gnu-sed
 
+# Install tmux
+brew install tmux
+
 # Install retry
 brew pull 27283
 brew install retry
@@ -127,7 +128,6 @@ brew install the_silver_searcher
 
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
 (mv ${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-ln -s ${HOME}/.dotfiles/.grc ${HOME}/.grc
 
 # Install latex
 brew cask install basictex
