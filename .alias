@@ -46,6 +46,7 @@ alias kuc='kubectl config use-context'
 
 alias kdnsf='kube_delete_namespace_force'
 
+alias mage='go run mage.go'
 
 alias kexec='kube_exec'
 
