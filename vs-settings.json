@@ -38,7 +38,7 @@
     "php-cs-fixer.executable": "~/.composer/vendor/bin/php-cs-fixer",
     "php-cs-fixer.pathMode": "override",
     "vs-kubernetes": {
-        "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vs-kubernetes.minikube-path": "/Users/jcchavezs/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "xml.format.splitAttributes": true,
     "editor.formatOnSave": true,
@@ -58,8 +58,14 @@
     "redhat.telemetry.enabled": true,
     "editor.inlineSuggest.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "go.executable.path": "/usr/local/go/bin/go",
     "yaml.schemas": {
         "https://github.com/jcchavezs/envoy-config-schema/releases/download/v1.21.0/v3_Bootstrap.json": "envoy-config.yaml"
-    }
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false
+    },
+    "editor.renderWhitespace": "none"
 }
