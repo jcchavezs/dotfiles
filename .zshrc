@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.alias
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/usr/local/opt/go/libexec/bin" # Add GO to the PATH for scripting
+export PATH="$PATH:$(brew --prefix golang)/libexec" # Add GO to the PATH for scripting
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/Workspace/gource/bin"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
@@ -107,6 +107,7 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"
 export PATH=$PATH:$M2_HOME/bin
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$PATH:$HOME/Workspace/source/github.com/tetrateio/tetrate/tctl/build/debug/bin"
 
 [[ -f $HOME/.env ]] && source $HOME/.env # used for secrets
 
@@ -119,3 +120,5 @@ export GETMESH_HOME="$HOME/.getmesh"
 export PATH="$GETMESH_HOME/bin:$PATH"
 
 export PATH="$PATH:$HOME/bin"
+
+export KUBE_EDITOR='code --wait'

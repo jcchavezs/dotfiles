@@ -1,6 +1,5 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 2,
     "editor.fontSize": 15,
     "files.exclude": {
         "**/.idea": true,
@@ -38,7 +37,7 @@
     "php-cs-fixer.executable": "~/.composer/vendor/bin/php-cs-fixer",
     "php-cs-fixer.pathMode": "override",
     "vs-kubernetes": {
-        "vs-kubernetes.minikube-path": "/Users/jcchavezs/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "xml.format.splitAttributes": true,
     "editor.formatOnSave": true,
@@ -58,14 +57,18 @@
     "redhat.telemetry.enabled": true,
     "editor.inlineSuggest.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    "go.executable.path": "/opt/homebrew/bin/go",
     "yaml.schemas": {
         "https://github.com/jcchavezs/envoy-config-schema/releases/download/v1.21.0/v3_Bootstrap.json": "envoy-config.yaml"
     },
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
-        "plaintext": false,
-        "markdown": false
+    "[python]": {
+        "editor.formatOnType": true
     },
-    "editor.renderWhitespace": "none"
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "go.testTimeout": "300s",
+    "window.commandCenter": false,
+    "window.zoomLevel": 2
 }
