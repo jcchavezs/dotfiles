@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions kubectl)
 
 # User configuration
 
@@ -120,5 +120,10 @@ export GETMESH_HOME="$HOME/.getmesh"
 export PATH="$GETMESH_HOME/bin:$PATH"
 
 export PATH="$PATH:$HOME/bin"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH" # allows to run coreutils without g prefix
 
 export KUBE_EDITOR='code --wait'
+
+autoload -U codlors; colors
+source $HOME/.zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$fg[red]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'

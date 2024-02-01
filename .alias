@@ -41,17 +41,7 @@ alias dcdn="docker_clean_duplicated_names"
 # k8s
 alias k='kubectl'
 alias i='getmesh istioctl'
-alias kgc='kubectl config get-contexts'
-alias kuc='kubectl config use-context'
-
 alias kdnsf='kube_delete_namespace_force'
-
 alias mage='go run mage.go'
-
 alias kexec='kube_exec'
-
-# Tetrate
-alias gstetrate='grep -q "email" .git/config || echo "[user]
-        name = José Carlos Chávez
-        email = jc@tetrate.io
-" >> .git/config && cat .git/config'
+alias kc='kubectx'

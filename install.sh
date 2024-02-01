@@ -39,10 +39,13 @@ brew install httpie
 # Install htop
 brew install htop
 
-# Install AG
-brew install the_silver_searcher
+brew install helm
+
+brew install coreutils
 
 brew install kustomize
+
+brew install kubectx
 
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
 ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
@@ -88,10 +91,6 @@ brew install pmd
 # Install kotlin
 brew install kotlin
 
-# Install scala
-brew install scala
-brew install sbt
-
 # Install clang-format
 brew install clang-format
 
@@ -101,6 +100,8 @@ rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 rm -rf ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+rm -rf ${HOME}/.zsh-kubectl-prompt
+git clone git@github.com:superbrothers/zsh-kubectl-prompt.git ${HOME}/.zsh-kubectl-prompt
 
 # Install VIM
 brew install vim

@@ -49,6 +49,7 @@ scala-lang.scala
 shengchen.vscode-checkstyle
 streetsidesoftware.avro
 TheNouillet.symfony-vscode
+Tim-Koehler.helm-intellisense
 twxs.cmake
 VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
@@ -60,6 +61,7 @@ vscjava.vscode-maven
 xaver.clang-format
 xdebug.php-debug
 xdebug.php-pack
+yesoreyeram.grafana
 ziyasal.vscode-open-in-github
 zobo.php-intellisense
 zxh404.vscode-proto3

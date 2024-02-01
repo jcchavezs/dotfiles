@@ -70,5 +70,6 @@
     },
     "go.testTimeout": "300s",
     "window.commandCenter": false,
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "security.workspace.trust.untrustedFiles": "open"
 }
