@@ -1,30 +1,30 @@
-alias phpfix='php-cs-fixer fix'
 alias ws='cd ~/Workspace'
 alias dotfiles='code ~/.dotfiles'
 alias univ='cd ~/Google\ Drive/Universitat; cd "$(ls -p | grep "^*" -m 1)"' # opens current semester folder
-alias src='cd ~/Workspace/source'
 alias gsrc='cd ~/Workspace/gource'
+alias poc='cd ~/Workspace/source/github.com/atko-scratch/josecarlos-chavez_atko-poc; cookiecutter gh-template'
 
 # GIT
 alias gs='git status -s -u'
 alias g='git'
 alias gco='git checkout'
-alias gcom='git checkout master'
+alias gcom='git checkout main'
 alias gdc='git diff --cached'
 alias gfa='git fetch --all'
 alias gcm='git commit -m '
 alias gpo='git pull origin'
-alias gpom='git pull origin master'
+alias gpom='git pull --no-rebase origin main'
 alias gpro='git pull --rebase origin'
-alias gprom='git pull --rebase origin master'
+alias gprom='git pull --rebase origin main'
+alias gprom='git pull --rebase origin main'
 alias grh1s='git reset HEAD~1 --soft' # undoes last commit
 alias grh='git reset HEAD'
 alias gg='git log --pretty="format:%C(yellow)%h% %Cblue %ar %Cgreen %aE %Creset %s%C(auto,red)% gD% D"'
 alias gcp='git cherry-pick'
-alias gbc="git branch --merged | grep -v master | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp*" # cleans merged branches
+alias gbc="git branch --merged | grep -v main | grep -v '*' > .merged-branches.tmp && vim .merged-branches.tmp && xargs git branch -d < .merged-branches.tmp; rm .merged-branches.tmp*" # cleans merged branches
 alias galc="git_ammend_last_commit" # ammends the last commit adding the stagged files
 alias gcl='git clean -f -d' # resets all the changes including new files
-alias gram='git stash && gco master && git pull origin master && gco - && git pull --rebase origin master && git stash pop' # rebases against master
+alias gram='git stash && gco main && git pull origin main && gco - && git pull --rebase origin master && git stash pop' # rebases against master
 alias gbwip='git_branch_wip' # creates WIP branch with existing files
 alias gcwip='git add . && git commit -m "wip" --no-verify' # does a WIP commit in the branch
 alias gmf="git_modified_files"
@@ -37,10 +37,10 @@ alias dsa="docker ps -aq | xargs docker stop"
 alias dcf="docker-compose stop && docker-compose rm -f -v"
 alias drm="docker rm -f"
 alias dcdn="docker_clean_duplicated_names"
+alias docker-labels="docker_labels"
 
 # k8s
 alias k='kubectl'
-alias i='getmesh istioctl'
 alias kdnsf='kube_delete_namespace_force'
 alias mage='go run mage.go'
 alias kexec='kube_exec'

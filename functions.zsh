@@ -75,3 +75,78 @@ function docker_clean_duplicated_names() { # alias dcdn
   fi
   cat $DOCKERFILE | yq -r '.services | keys[]' | xargs -I {} docker rm -f {} || true
 }
+
+function docker_labels() {
+  echo "\nLabels for $1\n"
+  docker inspect -f '{{ range $k, $v := .Config.Labels -}}
+{{ $k }}={{ $v }}
+{{ end -}}' $1
+}
+
+function jira_ticket() {
+  local commit_msg
+  commit_msg=$(git log -1 --pretty=%s 2>/dev/null)
+  if [[ $? -ne 0 || -z "$commit_msg" ]]; then
+    echo "Not a git repository or no commits found."
+    return 1
+  fi
+
+  local current_branch
+  current_branch=$(git symbolic-ref --short HEAD)
+
+  if [[ "$current_branch" == *"SEPIO-"* || "$commit_msg" == *"SEPIO-"* ]]; then
+    echo "Branch or commit already references a SEPIO ticket, skipping."
+    return 0
+  fi
+
+  # If the first commit is a wip, use the branch name as summary
+  local summary
+  if [[ "$commit_msg" == "wip" ]]; then
+    summary="$current_branch"
+  else
+    # Strip conventional commit prefix: type(scope): or type:
+    summary=$(echo "$commit_msg" | sed 's/^[a-z]\+\(([^)]*)\)\?!*: //')
+  fi
+
+  # Create Jira issue in SEPIO project assigned to current user
+  local create_output
+  create_output=$(jira issue create \
+    --project SEPIO \
+    --summary "$summary" \
+    --type "Task" \
+    --assignee "$(jira me)" \
+    --no-input)
+
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to create Jira ticket."
+    return 1
+  fi
+
+  # Extract ticket key, e.g. SEPIO-123, from the returned URL
+  local ticket_key
+  ticket_key=$(echo "$create_output" | grep -oE '[A-Z]+-[0-9]+' | head -1)
+
+  if [[ -z "$ticket_key" ]]; then
+    echo "Could not parse ticket key from output: $create_output"
+    return 1
+  fi
+
+  echo "Created: $ticket_key"
+
+  # Transition ticket to In Progress
+  jira issue move "$ticket_key" "In Progress"
+
+  # Prepend ticket key to the current branch name
+  new_branch="${ticket_key}/${current_branch}"
+  git branch -m "$new_branch"
+  echo "Branch renamed to: ${new_branch}"
+  gb -D $current_branch
+
+  git push origin "$new_branch" --no-verify
+  git branch --set-upstream-to origin/$new_branch
+  export JIRA_TICKET_KEY="$ticket_key"
+  envsubst < ~/.dotfiles/pr-template.md | gh pr create --title="${summary} (${ticket_key})" --body-file=- --draft --assignee @me
+
+  # Open ticket in browser
+  jira open "$ticket_key"
+}

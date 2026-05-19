@@ -1,14 +1,15 @@
 [core]
 	excludesfile = ~/.dotfiles/.gitignore.global
 	editor = /usr/bin/vim
-[user]
-	name = José Carlos Chávez
-	email = jcchavezs@gmail.com
+	sshCommand = /usr/local/bin/ocm handler ssh
 [alias]
 	recent = !git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))'
 	pr = !open `git config remote.origin.url`/compare/$(git rev-parse --abbrev-ref HEAD)
 	# see http://weiqingtoh.github.io/force-with-lease/
 	pushf = push --force-with-lease
+	wta = "!f() { git worktree add -b \"$1\" \"../$1\"; }; f"
+	wtr = "!f() { git worktree remove \"../$1\"; }; f"
+	wtl = "!f() { git worktree list; }; f"
 [diff]
 	noprefix = false
 [filter "lfs"]
@@ -16,7 +17,25 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [init]
 	defaultBranch = main
+[credential]
+	useHttpPath = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[push]
+	default = simple
+[branch]
+	autosetupmerge = always
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[commit]
+	gpgsign = true
+[user]
+	name = jcchavezs
+	email = josecarlos.chavez@owasp.org
+	signingkey = 9771C189AB38A146

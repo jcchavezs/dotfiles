@@ -40,7 +40,6 @@
         "vs-kubernetes.minikube-path": "/Users/joschavez/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "xml.format.splitAttributes": true,
-    "editor.formatOnSave": true,
     "namespaceResolver.sortOnSave": true,
     "namespaceResolver.sortNatural": true,
     "namespaceResolver.showMessageOnStatusBar": true,
@@ -57,9 +56,9 @@
     "redhat.telemetry.enabled": true,
     "editor.inlineSuggest.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "go.executable.path": "/opt/homebrew/bin/go",
     "yaml.schemas": {
-        "https://github.com/jcchavezs/envoy-config-schema/releases/download/v1.21.0/v3_Bootstrap.json": "envoy-config.yaml"
+        "https://github.com/jcchavezs/envoy-config-schema/releases/download/v1.21.0/v3_Bootstrap.json": "envoy-config.yaml",
+        "file:///Users/josecarlos.chavez/Workspace/source/github.com/atko-cic/pipeline-cli/schemas/ProjectManifest.json": "project.yaml"
     },
     "[python]": {
         "editor.formatOnType": true
@@ -71,5 +70,41 @@
     "go.testTimeout": "300s",
     "window.commandCenter": false,
     "window.zoomLevel": 2,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.pushBranch": "always",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "go.alternateTools": {},
+    "go.toolsManagement.go": "/opt/homebrew/bin/go",
+    "go.gopath": "",
+    "update.showReleaseNotes": false,
+    "git.openRepositoryInParentFolders": "never",
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "atlascode.bitbucket.enabled": false,
+    "atlascode.jira.todoIssues.enabled": false,
+    "claudeCode.environmentVariables": [
+        {
+            "name": "CLAUDE_CODE_USE_BEDROCK",
+            "value": "1"
+        }
+    ],
+    "claudeCode.preferredLocation": "panel",
+    "chat.tools.terminal.autoApprove": {
+        "go": true
+    }
 }

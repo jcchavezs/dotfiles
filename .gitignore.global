@@ -31,8 +31,8 @@ CMake*
 .Trash-*
 
 # VSCode
-*.code-workspace
-.vscode/*
+/*.code-workspace
+/.vscode/*
 
 # Java
 .project

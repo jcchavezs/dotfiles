@@ -3,70 +3,61 @@
 touch ${HOME}/.env
 
 mkdir -p ${HOME}/Workspace/source/github.com/jcchavezs
-mkdir ${HOME}/Workspace/gource
-mkdir ${HOME}/Workspace/tools
+mkdir -p ${HOME}/Workspace/gource
+mkdir -p ${HOME}/Workspace/tools
 
-# Install brew
+BREW=${BREW:-brew}
+
+# Install $BREW
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew update
-brew upgrade
-brew cleanup
+$BREW update
+$BREW upgrade
+$BREW cleanup
 
 # Setup GIT
 ln -sf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
-brew install pre-commit
-brew install gh
+git config --global alias.wta '!f() { git worktree add -b "$1" "../$1"; }; f'
+git config --global alias.wtr '!f() { git worktree remove "../$1"; }; f'
+git config --global alias.wtl '!f() { git worktree list; }; f'
+$BREW install pre-commit
+$BREW install gh
 
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions || true
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone git@github.com:zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 rm -rf ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search || true
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
-# Install VIM
-brew install vim
-brew install fzf
-rm -rf ${HOME}/.vim/bundle/Vundle.vim || true
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
-
 # Install mysql-client
-brew install mysql-client
-
-# Install httpie
-brew install httpie
+$BREW install mysql-client
 
 # Install htop
-brew install htop
+$BREW install htop
 
-brew install helm
+$BREW install helm
 
-brew install coreutils
+$BREW install coreutils
 
-brew install kustomize
+$BREW install kustomize
 
-brew install kubectx
+$BREW install kubectx
 
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
 ln -s ${HOME}/.dotfiles/functions.zsh ${ZSH_CUSTOM}/functions.zsh
-
-(mv ${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
 cp ${HOME}/.dotfiles/vs-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 
 # Install Go
-brew install go
+$BREW install go
 mkdir ${HOME}/Workspace/gource/pkg
 mkdir ${HOME}/Workspace/gource/bin
 go get golang.org/x/tools/cmd/goimports
 
 # Install protobuf
-brew install protobuf
-export GO111MODULE=on
-go get github.com/golang/protobuf/protoc-gen-go
-go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
+$BREW install buf
 
 # Install PHP
-brew install php@8.0
+$BREW install php@8.0
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
@@ -79,20 +70,20 @@ curl -sSL https://get.rvm.io | bash
 ln -s ${HOME}/.rvm/scripts/functions/version ${HOME}/.rvm/scripts/version
 
 # Install node
-brew install node
-brew install yarn
+$BREW install node
+$BREW install yarn
 
 # Install Java
 java -version
-brew install maven
-brew info maven
-brew install pmd
+$BREW install maven
+$BREW info maven
+$BREW install pmd
 
 # Install kotlin
-brew install kotlin
+$BREW install kotlin
 
 # Install clang-format
-brew install clang-format
+$BREW install clang-format
 
 # Install ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -100,38 +91,28 @@ rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 rm -rf ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+
 rm -rf ${HOME}/.zsh-kubectl-prompt
 git clone git@github.com:superbrothers/zsh-kubectl-prompt.git ${HOME}/.zsh-kubectl-prompt
 
-# Install VIM
-brew install vim
-brew install fzf
-rm -rf ${HOME}/.vim/bundle/Vundle.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
-
 # Install httpie
-brew install httpie
-brew install jq
+$BREW install jq
 
 # Install watch
-brew install watch
-brew install gnu-sed
+$BREW install watch
+$BREW install gnu-sed
 
 # Install tmux
-brew install tmux
+$BREW install tmux
 
 # Install retry
-brew pull 27283
-brew install retry
-
-# Install AG
-brew install the_silver_searcher
+$BREW pull 27283
+$BREW install retry
 
 (mv ${HOME}/.zshrc ${HOME}/.zshrc_backup || true) && ln -s ${HOME}/.dotfiles/.zshrc ${HOME}/.zshrc
-(mv ${HOME}/.vimrc ${HOME}/.vimrc_backup || true) && ln -s ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
 
 # Install latex
-brew cask install basictex
+$BREW cask install basictex
 sudo tlmgr update --self
 sudo tlmgr install latexmk enumitem stmaryrd collection-fontsrecommended
 
